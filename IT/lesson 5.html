@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 5</title>
+    <style>
+        .second {
+            background:black !important;
+        }
+        #wrap .second {                     110
+            background: green;
+        }
+        body div .square .second {
+            background:red;
+        }
+        .square {                           022
+            width:300px;
+            height:50px;
+            border:1px solid black;
+            margin:30px auto;
+            background:yellow;
+        }
+        .second {
+            position: relative;
+            top:0;
+            left:0;
+            background:green;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <div class="square first">1</div>
+    <div class="square second" style="background:blue;">2</div>
+    <div class="square third">3</div>
+</div>
+
+
+<h1>CSS специфичность (приоритеты правил)</h1>
+Подсчитывается три типа параметров:
+<ul>
+    <li>A - #id</li>
+    <li>B - классы или псевдоклассы</li>
+    <li>C - теги элементов (div, ::before)</li>
+</ul>
+Записывается десятичное число из цифр ABC
+Формально число не в 10-чной системе, а в системе с достаточно большим основанием
+AN^3 + BN^3 + CN (где N достаточно велико).
+Чем число больше, тем правило приоритетней.
+<h1>Плавные переходы</h1>
+св-во transition: all 2s;
+</body>
+</html>

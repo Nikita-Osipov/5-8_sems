@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<HTML lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<title>Задание 4</title>
+		<style>
+			p:hover {
+				border:1px dotted blue;
+			}
+			a:active {
+				color:red;
+			}
+			a:visited {
+				color:green;
+			}
+			p::before {
+				content: "&";
+			}
+			p:hover::after {
+				content: "!";
+			}
+			.square {
+				width: 100px;
+				height: 100px;
+				border:5px solid black;
+				position: relative;
+			}
+			.square:hover::after {
+				content: "";
+				display: block;
+				width: 50px;
+				height: 50px;
+				background: blue;
+			}
+			.parent {
+				width: 400px;
+				height: 400px;
+				background: yellow;
+				position: relative;
+			}
+			.child {
+				position: absolute;
+				bottom: 0px;
+				right: 0px;
+				width: 100px;
+				height: 100px;
+				background: green;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Псевдокласс (псевдоселектор)</h1>
+		<p>Первый абзац</p>
+		<p>Второй абзац</p>
+		<a href="https://www.basketball-reference.com/">basketball</a>
+		<a href="https://www.youtube.com/">youtube</a>
+		<p>Основные псевдоклассы</p>
+		<ul>
+			<li>:hover - под указателем мыши</li>
+			<li>:active - активный элемент (где курсор)</li>
+			<li>:visited - посещенная ссылка</li>
+		</ul>
+		<h1>Псевдоэлементы</h1>
+		<ul>
+			<li>::before - Добавление до</li>
+			<li>::after - Добавление после</li>
+		</ul>
+		<div class="square"></div>
+		<h1>Позиционирование</h1>
+		<p>css св-во position принимает значения:</p>
+		<ul>
+			<li>static - обычное по умолчанию</li>
+			<li>relative - позволяет указать относительный сдвиг</li>
+			<li>absolute - </li>
+		</ul>
+		<div class="parent"></div>
+		<div class="child"></div>
+	</body>
+</HTML>

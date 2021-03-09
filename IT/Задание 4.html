@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 4</title>
+    <style>
+        .battery {
+            width: 300px;
+			height: 100px;
+            border:5px solid black;
+            position: relative;
+            border-radius: 10px;
+        }
+        .battery::after {
+            content: "";
+            display: block;
+            position: absolute;
+            right: -15px;
+            top: 33px;
+            width: 10px;
+            height: 33px;
+            background-color: black;
+            margin: 0 0 20px
+        }
+        .battery.low {
+            background: linear-gradient(to right, red 33%, transparent 33%);
+        }
+        .battery.medium {
+            background: linear-gradient(to right, yellow 66%, transparent 66%);
+        }
+        .battery.high {
+            background: green;
+        }
+        .low:hover {
+            background: linear-gradient(to right, red 66%, transparent 66%);
+        }
+        .medium:hover {
+            background: linear-gradient(to right, yellow 100%, transparent 100%);
+        }
+        .high:hover {
+            background: linear-gradient(to right, green 33%, transparent 33%);
+        }
+    </style>
+</head>
+<body>
+
+<div class="battery low"></div><br>
+
+<div class="battery medium"></div><br>
+
+<div class="battery high"></div>
+
+</body>
+</html>
