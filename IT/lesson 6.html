@@ -10,11 +10,56 @@
             height: 100px;
             border-radius: 50%;
         }
+        .circle:hover {
+            width:200px;
+            height:200px;
+        }
+<!--        .rect {-->
+<!--            width:400px;-->
+<!--            height:200px;-->
+<!--            background:yellow;-->
+<!--        }-->
+        #rect1, #rect2 {
+            width:400px;
+            height:200px;
+            background:yellow;
+            margin-bottom:30px;
+        }
+        .first, .second {
+            width:190px;
+            height:190px;
+            background:red;
+            border: 5px solid grey;
+        }
+        .second {
+            position:relative;
+            background:blue;
+            top:-100%;
+            left:50%
+        }
+        #rect1 .first, #rect1 .second {
+            width:calc(50%-10px)
+            height:calc(100%-10px);
+        }
+        #rect2 .first, #rect2 .second {
+            width:calc(50%-10px)
+            height:calc(100%-10px);
+            box-sizing:border-box;
+        }
     </style>
 </head>
 <body>
-<p>linear-gradient</p>
-<p>border-radius</p>
+<h2>linear-gradient</h2>
+<h2>border-radius</h2>
+<h2>Свойство box-sizing</h2>
 <div class="circle"></div>
+<div id="rect1">
+    <div class="first"></div>
+    <div class="second"></div>
+</div>
+<div id="rect2">
+    <div class="first"></div>
+    <div class="second"></div>
+</div>
 </body>
 </html>

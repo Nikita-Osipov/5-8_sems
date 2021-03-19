@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 5</title>
+    <style>
+        .circle {
+            background: green;
+            width: 600px;
+            height: 600px;
+            margin: auto;
+            border-radius: 50%;
+            position: relative;
+        }
+        body > .circle > .circle{
+            background: yellow;
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -150px 0 0 -150px;
+            border-radius: 50%;
+        }
+        .circle:hover {
+            width:1200px;
+            height:1200px;
+        }
+        body > .circle:hover > .circle{
+            width: 600px;
+            height: 600px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -300px 0 0 -300px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+<div class="circle">
+    <div class="circle">
+    </div>
+</div>
+</body>
+</html>
