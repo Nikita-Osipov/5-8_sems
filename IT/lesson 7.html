@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li:first-child {
+        color: red;
+        }
+        li:last-child {
+        color: blue;
+        }
+        li:nth-child(n) {
+        background: blue;
+        }
+        li:nth-child(2n) {
+        background: green;
+        }
+<!--        li:nth-child(3n) {-->
+<!--        background: yellow;-->
+<!--        }-->
+    </style>
+</head>
+<body>
+    <h2>position: fixed</h2>
+    Аналогично absolute, но позволяет спозиционировать элемент так, что он всегда на экране.
+    <h2>Псевдослекторы :first-child :last-child :nth-child</h2>
+    Синтаксис li:first-child применит правило к элементус типом li, который является первым потомком своего родителя.
+    <ul>
+        <li>Первый</li>
+        <li>Второй</li>
+        <li>Третий</li>
+        <li>Четвертый</li>
+        <li>Пятый</li>
+        <li>Шестой</li>
+        <li>Седьмой</li>
+        <li>Восьмой</li>
+        <li>Девятый</li>
+    </ul>
+</body>
+</html>

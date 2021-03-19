@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 6</title>
+    <style>
+        .square {
+            background: grey;
+            width: 760px;
+            height: 200px;
+            right: 770px;
+            top:100px;
+            position: relative;
+        }
+        .square::after {
+            content: "Обратная связь";
+            writing-mode:vertical-rl;
+            text-align:center;
+            display: block;
+            position: absolute;
+            right: -20px;
+            top: 0px;
+            width: 20px;
+            height: 200px;
+            background-color: orange;
+            border-radius: 0 50px 50px 0;
+        }
+        .square:hover {
+            right: 10px;
+        }
+        .main_text {
+            text-align:center;
+            margin: 10%;
+        }
+        .first, .second {
+            width:380px;
+            height:200px;
+        }
+        .second {
+            position:relative;
+            top:-108%;
+            left:50%
+        }
+    </style>
+</head>
+<body>
+<div class="square">
+    <div class="first">
+        <img src="ava.jpg" height="200px">
+    </div>
+    <div class="second">
+        <p class="main_text">Если у вас возникли вопросы по этому коду, звоните мне по телефону: 123456789. Звонок платный.</p>
+    </div>
+</div>
+</body>
+</html>
