@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flex</title>
+    <style>
+        ul.menu {
+            list-style:none;
+            display:flex;
+            padding:0;
+            cursor:pointer;
+        }
+        ul.menu li {
+            padding:10px;
+            background:#cdf390;
+            position:relative;
+        }
+        ul.menu > li {
+            border-right:1px solid black;
+        }
+        ul.menu li:hover {
+            background:green;
+        }
+        ul.menu ul {
+            list-style:none;
+            display:none;
+            position:absolute;
+            padding:0;
+            width:150px;
+            left:0%;
+            top:100%;
+            border:1px solid black;
+        }
+        ul.menu li:hover > ul {
+            display:block;
+        }
+        ul.menu li:hover > ul li:hover > ul {
+            display:block;
+            left:100%;
+            top:0%;
+        }
+    </style>
+
+</head>
+<body>
+    <h2>Выпадающее меню</h2>
+        <ul class="menu">
+            <li>Файл
+                <ul>
+                    <li>Создать</li>
+                    <li>Открыть</li>
+                </ul>
+            <li>Правка
+                <ul>
+                    <li>Вырезать</li>
+                    <li>Копировать</li>
+                    <li>Вставить</li>
+                    <li>Подменю 3
+                        <ul>
+                            <li>Пункт 1</li>
+                            <li>Пункт 2</li>
+                            <li>Подменю 4
+                                <ul>
+                                    <li>Пункт 1</li>
+                                    <li>Пункт 2</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            <li>Поиск</li>
+        </ul>
+</body>
+</html>
