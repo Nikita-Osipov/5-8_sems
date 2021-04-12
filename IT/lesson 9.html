@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .flex {
+            display:flex;
+            width:80%;
+            margin:0 auto;
+            height:300px;
+            border:1px solid blue;
+        }
+        .right {
+            justify-content:flex-end;
+        }
+        .card {
+            height:100px;
+            border:1px solid black;
+            width:50px;
+            margin:10px;
+            font-size:24px;
+            text-align:center;
+            line-height:100px;
+            display:flex;
+            flex-direction:row;
+            justify-content:space-evenly;
+        }
+        .card.selected {
+            background:orange;
+            color:white;
+            transition-duration: .5s;
+        }
+    </style>
+    <script>
+        window.onload = onLoad;
+
+        function onLoad() {
+            var els =  document.querySelectorAll('.flex .card');
+            console.log("onLoad");
+            for (var i = 0; i<els.length; i++) {
+                var el = els[i];
+                el.addEventListener('click',switchSelected2);
+                el.addEventListener('dblclick',function(event) {
+                    var el = event.target;
+                    el.parentNode.appendChild(el);
+                });
+            }
+        }
+        function switchSelected2() {
+            this.classList.toggle('selected');
+        }
+
+
+        function switchSelected(el) {
+            el.classList.toggle('selected');
+<!--            if (el.classList.contains('selected')) {-->
+<!--                el.classList.remove('selected');-->
+<!--            } else {-->
+<!--                el.classList.add('selected');-->
+<!--            }-->
+        }
+        function test() {
+            var el = document.querySelector(".flex")
+            console.log(el)
+            el.style = "background:yellow; transition-duration: 3.5s;";
+            // document.querySelectorAll(".card")
+            alert("Привет!");
+            //console.log(el.innerHTML);
+            //el.className = "flex right";
+            el.classList.add("right")
+            //var parent = el.parentNode.parentNode.parentNode;
+            //console.log(parent);
+            var children = el.childNodes;
+            for (var i = 0; i<children.length; i++) {
+                children[i].style = "background:red; transition-duration: 3.5s;";
+            }
+<!--            while (el) {-->
+<!--                console.log(el);-->
+<!--                el = el.parentNode;-->
+<!--            }-->
+        }
+        function addCard() {
+            var el = document.createElement('div');
+            el.innerHTML = '9';
+            el.classList.add('card');
+            el.addEventListener('click',switchSelected2);
+            var flex = document.querySelector('.flex');
+            flex.appendChild(el);
+        }
+        function removeCard() {
+            var els = document.querySelectorAll('.flex .card');
+            for (var i = 0; i<els.length; i++) {
+                var el = els[i];
+                if (el.classList.contains('selected')) {
+                    el.remove();
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<button onclick="test()">Кнопка</button>
+<button onclick="addCard()">Добавить</button>
+<button onclick="removeCard()">Удалить</button>
+<div class="flex">
+    <div class="card selected">1</div>
+    <div class="card">2</div>
+    <div class="card">3</div>
+    <div class="card">4</div>
+</div>
+
+</body>
+</html>
