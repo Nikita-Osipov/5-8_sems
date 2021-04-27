@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Осипов Н.С., 14 вариант</title>
+    <style>
+        #wrap {
+            height: 400px;
+            width: 700px;
+            margin: 0 auto;
+            padding-top: 10px;
+            padding-right: 15px;
+            padding-bottom: 15px;
+            padding-left: 10px;
+            background: RGB(201, 201, 201);
+            position: relative;
+        }
+        .square {
+            width: 90px;
+            height: 90px;
+            background:green;
+            border:1px solid black;
+            cursor:pointer;
+        }
+        .circle {
+            width: 90px;
+            height: 90px;
+            border-radius:50%;
+            background:green;
+            border:1px solid black;
+            cursor:pointer;
+        }
+        #wrap .first {
+            position:absolute;
+            top: 0px;
+			left: 0px;
+        }
+        #wrap .second {
+            position:absolute;
+			top: 0;
+			right: 0;
+        }
+        #wrap .first:hover {
+            width: 94.5px;
+            height: 94.5px;
+            transition: 3s;
+        }
+        #wrap .second:hover {
+            background:yellow;
+            transition: 3s;
+        }
+    </style>
+    <script>
+    window.onload = onLoad;
+    function onLoad() {
+        var wrap = document.querySelector('#wrap');
+        console.log("onload");
+        var timer;
+        wrap.addEventListener('click', function(event) {
+            var el = event.target;
+                if (el.classList.contains('first') || el.classList.contains('second')) {
+                    el.classList.toggle('second');
+                    el.classList.toggle('first');
+                }
+        });
+    }
+
+    function add() {
+        console.log("add");
+        var wrap = document.querySelector('#wrap');
+        var el = document.createElement("div");
+        el.classList.add('circle');
+        el.classList.toggle('first');
+        wrap.appendChild(el);
+    }
+    </script>
+</head>
+<body>
+<h1>Осипов Н.С., 14 вариант</h1>
+<div id="wrap">
+    <div class="square first"></div>
+    <div class="circle second"></div>
+</div>
+<button onclick="add()">Добавить</button>
+</body>
+</html>

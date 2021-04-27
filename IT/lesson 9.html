@@ -31,7 +31,34 @@
             color:white;
             transition-duration: .5s;
         }
+        .settings {
+            border: 1px solid black;
+        }
+        .settings-wrap {
+            width: 50%;
+            margin: 0 auto;
+            display: none;
+            position: absolutely;
+            background: white;
+            top: 15%;
+            lest: 25%;
+        }
+
+        .setting-wrap .title {
+            background-color:blue;
+            color:white;
+            padding: 2px;
+            cursor: move;
+        }
+        ul.setting li {
+            cursor: pointer;
+        }
+        ul.setting li.collapsed ul {
+            display: none;
+        }
+
     </style>
+    <script src="js/movable.js"></script>
     <script>
         window.onload = onLoad;
 
@@ -97,18 +124,46 @@
                 }
             }
         }
+        function showSettings() {
+            var div = document.querySelector('.settings-wrap');
+            if (div.style.display == "block") {
+                div.style.display = "none";
+            } else {
+                div.style.display = "block";
+            }
+        }
     </script>
+    <link href="css/all.css" rel="stylesheet">
 </head>
 <body>
 <button onclick="test()">Кнопка</button>
 <button onclick="addCard()">Добавить</button>
 <button onclick="removeCard()">Удалить</button>
+<button onclick="showSettings()"><i class="fas fa-cogs">Настройки</i></button>
 <div class="flex">
     <div class="card selected">1</div>
     <div class="card">2</div>
     <div class="card">3</div>
     <div class="card">4</div>
 </div>
-
+<ul class="settings">
+    <li><span>flex-direction</span>
+        <ul>
+            <li>row
+            <li>column
+            <li>row-reverse
+            <li>column-reverse
+        </ul>
+    </li>
+    <li><span>justify-content</span>
+        <ul>
+            <li>start
+            <li>center
+            <li>space-between
+            <li>space-around
+            <li>space-evenly
+        </ul>
+    </li>
+</ul>
 </body>
 </html>
